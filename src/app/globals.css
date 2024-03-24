@@ -1,8 +1,35 @@
 :root {
+  /* color */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-body: #eaeaea;
+  --color-text-primary: #141414;
+  --color-text-secondary: #646468;
+  --color-text-tertiary: #8d8d92;
+  --color-anchor: #2d7bf7;
+
+  /* border-radius */
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 1rem;
+  --border-radius-lg: 1.5rem;
+
+  /* breakpoints */
+  --breakpoint-mobile-sm: 320px;
+  --breakpoint-mobile-md: 375px;
+  --breakpoint-mobile-lg: 425px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-laptop-lg: 1440px;
+  --breakpoint-4k: 2560px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --color-body: #1b1b1b;
+    --color-text-primary: #fbfbfb;
+    --color-text-secondary: #8d8d92;
+    --color-text-tertiary: #47474a;
+    --color-anchor: #3484f8;
   }
 }
 
@@ -10,10 +37,55 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background: var(--color-body);
+  color: var(--color-text-primary);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 1.5rem;
+  letter-spacing: 0.00063rem;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  letter-spacing: 0.00038rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.00038rem;
+}
+
+strong {
+  font-weight: 540;
+  color: var(--color-text-primary);
+}
+
+/* interactive elements */
+a {
+  color: #2d7bf7;
+  font-weight: 540;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
