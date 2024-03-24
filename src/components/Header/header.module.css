@@ -1,0 +1,18 @@
+.header,
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  padding-block: 2rem 1.5rem;
+  height: 40dvh;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding-block: 1rem 1.5rem;
+    height: 30dvh;
+  }
+}
