@@ -1,0 +1,21 @@
+.chipGlass,
+.chipSolid {
+  max-width: fit-content;
+  border-radius: var(--border-radius-sm);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.00038rem;
+}
+
+.chipGlass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+}
+
+.chipSolid {
+  /* todo: change for production */
+  background: var(--color-card-bg);
+}
