@@ -7,6 +7,7 @@
   --color-text-secondary: #646468;
   --color-text-tertiary: #8d8d92;
   --color-anchor: #2d7bf7;
+  --color-card-bg: #fff;
 
   /* border-radius */
   --border-radius-sm: 0.5rem;
@@ -30,6 +31,7 @@
     --color-text-secondary: #8d8d92;
     --color-text-tertiary: #47474a;
     --color-anchor: #3484f8;
+    --color-card-bg: #000;
   }
 }
 
@@ -86,10 +88,37 @@ strong {
 /* interactive elements */
 a {
   color: #2d7bf7;
-  font-weight: 540;
+  font-weight: inherit;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: inherit;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* text selection */
+::selection {
+  background: var(--color-text-primary);
+  color: var(--color-body);
+}
+
+::-moz-selection {
+  background: var(--color-text-primary);
+  color: var(--color-body);
 }

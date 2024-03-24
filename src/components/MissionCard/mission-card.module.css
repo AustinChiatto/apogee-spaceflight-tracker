@@ -1,0 +1,45 @@
+.gridItem {
+  grid-column: auto / span 4;
+  aspect-ratio: 1/1;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.missionCard {
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+
+.cardContent,
+.cardImage {
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  isolation: isolate;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.cardImage {
+  position: relative;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 16%,
+    rgba(0, 0, 0, 0) 75%
+  );
+}
+
+.cardListHorizontal {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.125rem;
+}

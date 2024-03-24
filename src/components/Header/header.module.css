@@ -7,7 +7,7 @@
 
 .header {
   padding-block: 2rem 1.5rem;
-  height: 40dvh;
+  height: 48dvh;
 }
 
 @media screen and (max-width: 768px) {

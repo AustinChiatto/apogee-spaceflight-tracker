@@ -1,5 +1,13 @@
 .main {
   padding-inline: 2rem;
+  /* todo: remove for production */
+  min-height: 100vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.5rem;
 }
 
 @media screen and (max-width: 768px) {
