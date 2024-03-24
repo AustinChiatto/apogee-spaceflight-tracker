@@ -1,0 +1,45 @@
+.primary {
+  color: var(--color-text-primary);
+}
+
+.secondary {
+  color: var(--color-text-secondary);
+}
+
+.tertiary {
+  color: var(--color-text-tertiary);
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.p {
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.h1,
+.h2,
+.h3 {
+  font-size: 1.5rem;
+  letter-spacing: 0.00063rem;
+  line-height: 2rem;
+}
+
+.h4,
+.h5,
+.h6 {
+  font-size: 1rem;
+  letter-spacing: 0.00038rem;
+}
+
+.p {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.00038rem;
+  line-height: 1.4rem;
+}
