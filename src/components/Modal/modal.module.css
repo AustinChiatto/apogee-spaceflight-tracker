@@ -11,7 +11,7 @@
   max-height: 100vh;
   overflow-y: scroll;
 
-  background: rgba(50, 50, 50, 0.48);
+  background: var(--color-modal-glass);
   backdrop-filter: blur(20px);
   animation: blur 300ms forwards linear;
 }
@@ -45,6 +45,11 @@
   border-radius: 100%;
   position: sticky;
   top: 0;
+  transition: rotate 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.modalCloseButton:hover {
+  rotate: 90deg;
 }
 
 .modalContent {

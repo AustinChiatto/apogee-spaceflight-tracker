@@ -8,6 +8,7 @@
   --color-text-tertiary: #8d8d92;
   --color-anchor: #2d7bf7;
   --color-card-bg: #fff;
+  --color-modal-glass: rgba(0, 0, 0, 0.5);
 
   /* border-radius */
   --border-radius-sm: 0.5rem;
@@ -32,6 +33,7 @@
     --color-text-tertiary: #47474a;
     --color-anchor: #3484f8;
     --color-card-bg: #000;
+    --color-modal-glass: rgba(255, 255, 255, 0.5);
   }
 }
 

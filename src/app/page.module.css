@@ -3,12 +3,6 @@
   padding-inline: 2rem;
 }
 
-.cardGrid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 0.5rem;
-}
-
 @media screen and (max-width: 768px) {
   .main {
     padding-inline: 1rem;
