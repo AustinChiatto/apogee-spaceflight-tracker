@@ -1,5 +1,5 @@
 .gridItem {
-  grid-column: auto / span 4;
+  grid-column: auto / span 12;
   aspect-ratio: 1/1;
   border-radius: var(--border-radius-md);
   overflow: hidden;
@@ -42,4 +42,22 @@
   display: flex;
   gap: 1rem;
   margin-top: 0.125rem;
+}
+
+@media screen and (min-width: 425px) {
+  .gridItem {
+    grid-column: auto / span 6;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .gridItem {
+    grid-column: auto / span 4;
+  }
+}
+
+@media screen and (min-width: 1540px) {
+  .gridItem {
+    grid-column: auto / span 3;
+  }
 }

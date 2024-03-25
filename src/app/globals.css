@@ -14,15 +14,6 @@
   --border-radius-sm: 0.5rem;
   --border-radius-md: 1rem;
   --border-radius-lg: 1.5rem;
-
-  /* breakpoints */
-  --breakpoint-mobile-sm: 320px;
-  --breakpoint-mobile-md: 375px;
-  --breakpoint-mobile-lg: 425px;
-  --breakpoint-tablet: 768px;
-  --breakpoint-laptop: 1024px;
-  --breakpoint-laptop-lg: 1440px;
-  --breakpoint-4k: 2560px;
 }
 
 @media (prefers-color-scheme: dark) {
