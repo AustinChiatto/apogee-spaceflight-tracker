@@ -1,15 +1,77 @@
-/* --- modal --- */
-.modalWrapper {
-  position: fixed;
-  border: 1px solid purple;
+.modalWrapper,
+.modalBody {
   display: grid;
-  top: -1rem;
-  right: -1rem;
-  bottom: -1rem;
-  left: -1rem;
+  grid-template-columns: repeat(12, 1fr);
+}
 
+.modalWrapper {
+  padding-block: 4rem;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 100vh;
+  max-height: 100vh;
   overflow-y: scroll;
-  background: rgba(50, 50, 50, 0.48);
 
+  background: rgba(50, 50, 50, 0.48);
   backdrop-filter: blur(20px);
+  animation: blur 300ms forwards linear;
+}
+
+.modalContainer {
+  grid-column: 3 / span 8;
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  background: var(--color-body);
+  border-radius: var(--border-radius-lg);
+  padding: 4rem;
+  padding-top: 2rem;
+  gap: 1rem;
+  transform: translateY(100vh);
+  animation: slide-up 400ms 200ms forwards cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalCloseButton {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: black;
+  border-radius: 100%;
+  position: sticky;
+  top: 0;
+}
+
+.modalBody {
+  gap: 0.5rem;
+  height: 1600px;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes blur {
+  0% {
+    backdrop-filter: blur(0);
+    background: rgba(50, 50, 50, 0);
+  }
+  100% {
+    backdrop-filter: blur(20px);
+    background: rgba(50, 50, 50, 0.48);
+  }
 }

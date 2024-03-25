@@ -14,6 +14,9 @@ export default function Home() {
       <Header />
       <ul className={styles.cardGrid}>
         <MissionCard handleToggleModal={handleToggleModal} />
+        <MissionCard handleToggleModal={handleToggleModal} />
+        <MissionCard handleToggleModal={handleToggleModal} />
+        <MissionCard handleToggleModal={handleToggleModal} />
       </ul>
       {isOpen && <Modal handleToggleModal={handleToggleModal} />}
     </main>
