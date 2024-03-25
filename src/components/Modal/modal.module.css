@@ -1,0 +1,15 @@
+/* --- modal --- */
+.modalWrapper {
+  position: fixed;
+  border: 1px solid purple;
+  display: grid;
+  top: -1rem;
+  right: -1rem;
+  bottom: -1rem;
+  left: -1rem;
+
+  overflow-y: scroll;
+  background: rgba(50, 50, 50, 0.48);
+
+  backdrop-filter: blur(20px);
+}

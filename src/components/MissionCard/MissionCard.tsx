@@ -2,6 +2,7 @@ import styles from './mission-card.module.css';
 import Image from 'next/image';
 import Chip from '../Chip/Chip';
 import Typography from '../Typography/Typography';
+import { ReactEventHandler } from 'react';
 
 const missionDetails = {
   missionType: 'mission-type',
@@ -11,10 +12,13 @@ const missionDetails = {
   launchVehicle: 'launch-vehicle'
 };
 
-const MissionCard = () => {
+const MissionCard = ({ handleToggleModal }: { handleToggleModal: ReactEventHandler }) => {
   return (
     <li className={styles.gridItem}>
-      <button className={styles.missionCard}>
+      <button
+        className={styles.missionCard}
+        onClick={handleToggleModal}
+      >
         <figure className={styles.cardImage}>
           <Image
             src="/placeholder.png"

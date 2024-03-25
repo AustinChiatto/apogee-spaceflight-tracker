@@ -1,10 +1,9 @@
 .main {
+  position: relative;
   padding-inline: 2rem;
-  /* todo: remove for production */
-  min-height: 100vh;
 }
 
-.grid {
+.cardGrid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 0.5rem;
