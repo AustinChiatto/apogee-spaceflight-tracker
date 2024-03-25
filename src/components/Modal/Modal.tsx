@@ -3,8 +3,14 @@ import styles from './modal.module.css';
 import Chip from '../Chip/Chip';
 import Image from 'next/image';
 import Typography from '../Typography/Typography';
+import { modalDataProps } from '@/types/modalTypes';
 
-const Modal = ({ handleToggleModal }: { handleToggleModal: ReactEventHandler }) => {
+type modalProps = {
+  handleToggleModal: ReactEventHandler;
+  modalData: modalDataProps | null;
+};
+
+const Modal = ({ handleToggleModal, modalData }: modalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   const handleOffModalClick = (e: any) => {
@@ -45,9 +51,10 @@ const Modal = ({ handleToggleModal }: { handleToggleModal: ReactEventHandler }) 
               level={2}
               style="h1"
             >
-              mission-name
+              {modalData?.mission.name}
             </Typography>
-            <Typography>mission-desc</Typography>
+            <p className={styles.sectionDesc}>{modalData?.mission.description}</p>
+            <div className={styles.contentGrid}></div>
           </section>
         </div>
       </div>

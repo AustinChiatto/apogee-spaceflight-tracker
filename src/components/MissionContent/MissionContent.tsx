@@ -3,11 +3,20 @@ import styles from './mission-content.module.css';
 import MissionCard from '@/components/MissionCard/MissionCard';
 import Modal from '@/components/Modal/Modal';
 import { launchApiData } from '@/types/missionContentTypes';
+import { modalDataProps } from '@/types/modalTypes';
 import { useState } from 'react';
 
+type ModalState = {
+  isOpen: boolean;
+  data: modalDataProps | null;
+};
+
 const MissionContent = ({ missionData }: launchApiData) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const handleToggleModal = () => setIsOpen(!isOpen);
+  // const [isOpen, setIsOpen] = useState(false);
+  const [modalState, setModalState] = useState<ModalState>({ isOpen: false, data: null });
+  const handleToggleModal = (modalData: modalDataProps | null) => {
+    setModalState({ isOpen: !modalState.isOpen, data: modalData });
+  };
 
   const abbreviateName = (name: string) => {
     return name
@@ -38,7 +47,7 @@ const MissionContent = ({ missionData }: launchApiData) => {
           return (
             <MissionCard
               key={i}
-              handleToggleModal={handleToggleModal}
+              handleToggleModal={() => handleToggleModal(result)}
               missionType={result.mission.type}
               missionName={result.mission.name}
               launchDate={launchDate}
@@ -49,7 +58,12 @@ const MissionContent = ({ missionData }: launchApiData) => {
           );
         })}
       </ul>
-      {isOpen && <Modal handleToggleModal={handleToggleModal} />}
+      {modalState.isOpen && (
+        <Modal
+          handleToggleModal={() => handleToggleModal(null)}
+          modalData={modalState.data}
+        />
+      )}
     </>
   );
 };

@@ -54,7 +54,14 @@
 
 .modalContent {
   gap: 0.5rem;
-  height: 1600px;
+}
+
+.modalContent > section + section {
+  margin-top: 4.5rem;
+}
+
+.sectionDesc {
+  margin-top: 0.5rem;
 }
 
 @keyframes slide-up {
