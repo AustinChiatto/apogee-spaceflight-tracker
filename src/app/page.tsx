@@ -10,9 +10,6 @@ const Home = async () => {
   return (
     <main className={styles.main}>
       <Header />
-      {/* {missionData.results.map((result: launchResult) => {
-        return <p key={result.id}>{result.mission.name}</p>;
-      })} */}
       {(await missionData) && <MissionContent missionData={missionData} />}
     </main>
   );

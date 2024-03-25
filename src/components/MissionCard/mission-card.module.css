@@ -25,17 +25,17 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
-}
-
-.cardImage {
-  position: relative;
-  background: rgb(0, 0, 0);
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 1) 0%,
     rgba(0, 0, 0, 1) 16%,
     rgba(0, 0, 0, 0) 75%
   );
+}
+
+.cardImage {
+  position: relative;
+  background: rgb(0, 0, 0);
 }
 
 .cardListHorizontal {

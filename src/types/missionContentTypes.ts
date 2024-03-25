@@ -9,6 +9,7 @@ export type launchResult = {
   id: string;
   mission: missionProps;
   rocket: rocketProps;
+  launch_service_provider: providerProps;
   image: string;
 };
 
@@ -17,7 +18,7 @@ export type rocketProps = {
   name: string;
   family: string;
   variant: string;
-  fullName: string;
+  full_name: string;
 };
 
 export type missionProps = {
@@ -30,18 +31,20 @@ export type missionProps = {
     name: string;
     abbrev: string;
   };
-  agency: {
-    id: string;
-    name: string;
-    abbrev: string;
-    type: string;
-    description: string;
-  };
+  agencies: Array<agencyProps>;
 };
 
-export type agencyProps = {
+type providerProps = {
   name: string;
   type: string;
+};
+
+type agencyProps = {
+  id: string;
+  name: string;
+  abbrev: string;
+  type: string;
+  description: string;
 };
 
 export type launchApiData = {

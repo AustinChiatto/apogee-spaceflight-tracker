@@ -2,17 +2,17 @@ import styles from './mission-card.module.css';
 import Image from 'next/image';
 import Chip from '../Chip/Chip';
 import Typography from '../Typography/Typography';
-import { ReactEventHandler } from 'react';
+import { missionCardProps } from './missionCardTypes';
 
-const missionDetails = {
-  missionType: 'mission-type',
-  missionName: 'mission-name',
-  launchDate: 'launch-date',
-  launchProvider: 'launch-provider',
-  launchVehicle: 'launch-vehicle'
-};
-
-const MissionCard = ({ handleToggleModal }: { handleToggleModal: ReactEventHandler }) => {
+const MissionCard = ({
+  handleToggleModal,
+  missionType,
+  missionName,
+  launchDate,
+  launchProvider,
+  launchVehicle,
+  imageSrc
+}: missionCardProps) => {
   return (
     <li className={styles.gridItem}>
       <button
@@ -20,32 +20,36 @@ const MissionCard = ({ handleToggleModal }: { handleToggleModal: ReactEventHandl
         onClick={handleToggleModal}
       >
         <figure className={styles.cardImage}>
-          <Image
-            src="/placeholder.png"
-            alt="todo:"
-            fill
-          />
+          {imageSrc && (
+            <Image
+              src={imageSrc}
+              alt={`Photo of the ${launchVehicle} rocket`}
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="33vw"
+            />
+          )}
         </figure>
         <div className={styles.cardContent}>
           <Chip
             isGlass
-            label={missionDetails.missionType}
+            label={missionType}
             style={{ placeSelf: 'flex-end' }}
           />
           <div className={styles.cardFooter}>
             <Chip
               isGlass
-              label={missionDetails.launchDate}
+              label={launchDate}
               style={{ marginBottom: '0.75rem' }}
             />
-            <Typography level={3}>{missionDetails.missionName}</Typography>
+            <Typography level={3}>{missionName}</Typography>
             <ul className={styles.cardListHorizontal}>
               <li>
                 <Typography
                   level={4}
                   style="p"
                 >
-                  {missionDetails.launchProvider}
+                  {launchProvider}
                 </Typography>
               </li>
               <li>
@@ -53,7 +57,7 @@ const MissionCard = ({ handleToggleModal }: { handleToggleModal: ReactEventHandl
                   level={4}
                   style="p"
                 >
-                  {missionDetails.launchVehicle}
+                  {launchVehicle}
                 </Typography>
               </li>
             </ul>
