@@ -1,10 +1,6 @@
-.modalWrapper,
-.modalBody {
+.modalWrapper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-}
-
-.modalWrapper {
   padding-block: 4rem;
 
   position: fixed;
@@ -29,7 +25,7 @@
   border-radius: var(--border-radius-lg);
   padding: 4rem;
   padding-top: 2rem;
-  gap: 1rem;
+  gap: 3rem;
   transform: translateY(100vh);
   animation: slide-up 400ms 200ms forwards cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
@@ -45,13 +41,13 @@
   height: 42px;
   display: grid;
   place-items: center;
-  background: black;
+  background: var(--color-black);
   border-radius: 100%;
   position: sticky;
   top: 0;
 }
 
-.modalBody {
+.modalContent {
   gap: 0.5rem;
   height: 1600px;
 }
