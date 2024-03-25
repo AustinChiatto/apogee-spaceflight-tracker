@@ -15,7 +15,7 @@ const Header = () => {
         </Typography>
       </div>
       <Typography color="secondary">
-        A live feed of planned missions in spaceflight <br /> from agencies around the world.
+        A feed of planned missions in spaceflight <br /> from agencies around the world.
       </Typography>
     </section>
   );
