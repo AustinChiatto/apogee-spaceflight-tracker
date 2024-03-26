@@ -4,10 +4,6 @@
   height: fit-content;
   border-radius: var(--border-radius-sm);
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.00038rem;
 }
 
 .chipGlass {
@@ -17,4 +13,12 @@
 
 .chipSolid {
   background: var(--color-modal-card);
+}
+
+.chipLabel {
+  color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.00038rem;
 }

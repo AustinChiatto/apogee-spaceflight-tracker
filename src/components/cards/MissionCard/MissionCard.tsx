@@ -42,12 +42,18 @@ const MissionCard = ({
               label={launchDate}
               style={{ marginBottom: '0.75rem' }}
             />
-            <Typography level={3}>{missionName}</Typography>
+            <Typography
+              level={3}
+              color="white"
+            >
+              {missionName}
+            </Typography>
             <ul className={styles.cardListHorizontal}>
               <li>
                 <Typography
                   level={4}
                   style="p"
+                  color="white"
                 >
                   {launchProvider}
                 </Typography>
@@ -56,6 +62,7 @@ const MissionCard = ({
                 <Typography
                   level={4}
                   style="p"
+                  color="white"
                 >
                   {launchVehicle}
                 </Typography>

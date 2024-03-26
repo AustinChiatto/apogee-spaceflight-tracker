@@ -15,7 +15,7 @@ const Chip = ({ label, isGlass, style }: ChipProps) => {
       className={`${isGlass ? styles.chipGlass : styles.chipSolid} ${mono.className}`}
       style={style}
     >
-      {label}
+      <p className={styles.chipLabel}>{label}</p>
     </div>
   );
 };
