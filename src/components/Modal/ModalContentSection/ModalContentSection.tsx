@@ -4,7 +4,7 @@ import Typography from '@/components/Typography/Typography';
 
 type sectionProps = {
   heading: string;
-  desc: string;
+  desc?: string;
   children: ReactNode;
 };
 
