@@ -60,7 +60,7 @@
   grid-column: auto / span 6;
   grid-row: auto / span 2;
   position: relative;
-  aspect-ratio: 2/1;
+  aspect-ratio: 1.5/1;
   overflow: hidden;
   background: var(--color-modal-card);
   border-radius: var(--border-radius-md);

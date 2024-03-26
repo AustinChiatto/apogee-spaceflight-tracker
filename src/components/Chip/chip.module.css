@@ -16,9 +16,13 @@
 }
 
 .chipLabel {
-  color: var(--color-white);
+  color: var(--color-text-primary);
   font-size: 0.875rem;
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.00038rem;
+}
+
+.chipGlass .chipLabel {
+  color: var(--color-white);
 }

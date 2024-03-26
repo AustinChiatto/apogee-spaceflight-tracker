@@ -118,10 +118,10 @@ const Modal = ({ handleToggleModal, modalData }: modalProps) => {
         <div className={styles.modalImage}>
           <Image
             src={modalData.image}
-            alt="todo: need alt"
+            alt={`Photo of the ${rocket.full_name} rocket`}
             fill
-            style={{ objectFit: 'cover' }}
-            sizes="33vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            sizes="25vw"
           />
         </div>
       )}
