@@ -1,7 +1,7 @@
 import styles from './mission-card.module.css';
 import Image from 'next/image';
-import Chip from '../Chip/Chip';
-import Typography from '../Typography/Typography';
+import Chip from '../../Chip/Chip';
+import Typography from '../../Typography/Typography';
 import { missionCardProps } from './missionCardTypes';
 
 const MissionCard = ({

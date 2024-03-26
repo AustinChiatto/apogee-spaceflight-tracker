@@ -4,6 +4,7 @@ import Chip from '../Chip/Chip';
 import Image from 'next/image';
 import Typography from '../Typography/Typography';
 import { modalDataProps } from '@/types/modalTypes';
+import ModalCard from '../cards/ModalCard/ModalCard';
 
 type modalProps = {
   handleToggleModal: ReactEventHandler;
@@ -54,7 +55,14 @@ const Modal = ({ handleToggleModal, modalData }: modalProps) => {
               {modalData?.mission.name}
             </Typography>
             <p className={styles.sectionDesc}>{modalData?.mission.description}</p>
-            <div className={styles.contentGrid}></div>
+            <ul className={styles.contentGrid}>
+              <ModalCard
+                preHeading="card-pre-heading"
+                heading="card-heading"
+              >
+                <p>card-value</p>
+              </ModalCard>
+            </ul>
           </section>
         </div>
       </div>

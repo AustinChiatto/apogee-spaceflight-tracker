@@ -1,6 +1,6 @@
 'use client';
 import styles from './mission-content.module.css';
-import MissionCard from '@/components/MissionCard/MissionCard';
+import MissionCard from '@/components/cards/MissionCard/MissionCard';
 import Modal from '@/components/Modal/Modal';
 import { launchApiData } from '@/types/missionContentTypes';
 import { modalDataProps } from '@/types/modalTypes';

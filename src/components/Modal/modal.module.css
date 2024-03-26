@@ -64,6 +64,13 @@
   margin-top: 0.5rem;
 }
 
+.contentGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
 @keyframes slide-up {
   0% {
     transform: translateY(100vh);

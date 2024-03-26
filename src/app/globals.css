@@ -3,12 +3,14 @@
   --color-white: #fff;
   --color-black: #000;
   --color-body: #eaeaea;
+  /* color - text */
   --color-text-primary: #141414;
   --color-text-secondary: #646468;
   --color-text-tertiary: #8d8d92;
   --color-anchor: #2d7bf7;
-  --color-card-bg: #fff;
+  /* color - modal */
   --color-modal-glass: rgba(0, 0, 0, 0.5);
+  --color-modal-card: var(--color-white);
 
   /* border-radius */
   --border-radius-sm: 0.5rem;
@@ -19,12 +21,14 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-body: #1b1b1b;
+    /* color - text */
     --color-text-primary: #fbfbfb;
     --color-text-secondary: #8d8d92;
     --color-text-tertiary: #47474a;
     --color-anchor: #3484f8;
-    --color-card-bg: #000;
+    /* color - modal */
     --color-modal-glass: rgba(255, 255, 255, 0.5);
+    --color-modal-card: #131313;
   }
 }
 
@@ -63,10 +67,15 @@ h3 {
 }
 
 h4,
-h5,
-h6 {
+h5 {
   font-size: 1rem;
   letter-spacing: 0.00038rem;
+}
+
+h6 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.00031rem;
 }
 
 p,
