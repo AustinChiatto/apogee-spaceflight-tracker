@@ -7,6 +7,8 @@ export type launchApiResponse = {
 
 export type launchResult = {
   id: string;
+  status: statusProps;
+  pad: padProps;
   mission: missionProps;
   rocket: rocketProps;
   launch_service_provider: providerProps;
@@ -34,6 +36,12 @@ export type missionProps = {
   agencies: Array<agencyProps>;
 };
 
+type statusProps = {
+  name: string;
+  abbrev: string;
+  description: string;
+};
+
 type providerProps = {
   name: string;
   type: string;
@@ -45,6 +53,25 @@ type agencyProps = {
   abbrev: string;
   type: string;
   description: string;
+  launchers: string;
+  spacecraft: string;
+  founding_year: number;
+  administrator: string;
+  total_launch_count: number;
+  successful_launches: number;
+  failed_launches: number;
+  successful_landings: number;
+  country_code: string;
+};
+
+type padProps = {
+  name: string;
+  map_url: string;
+  location: {
+    name: string;
+    country_code: string;
+  };
+  map_image: string;
 };
 
 export type launchApiData = {

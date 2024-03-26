@@ -12,7 +12,6 @@ type ModalState = {
 };
 
 const MissionContent = ({ missionData }: launchApiData) => {
-  // const [isOpen, setIsOpen] = useState(false);
   const [modalState, setModalState] = useState<ModalState>({ isOpen: false, data: null });
   const handleToggleModal = (modalData: modalDataProps | null) => {
     setModalState({ isOpen: !modalState.isOpen, data: modalData });

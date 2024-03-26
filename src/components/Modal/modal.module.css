@@ -56,19 +56,14 @@
   gap: 0.5rem;
 }
 
-.modalContent > section + section {
-  margin-top: 4.5rem;
-}
-
-.sectionDesc {
-  margin-top: 0.5rem;
-}
-
-.contentGrid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 0.5rem;
-  margin-top: 2rem;
+.modalImage {
+  grid-column: auto / span 6;
+  grid-row: auto / span 2;
+  position: relative;
+  aspect-ratio: 2/1;
+  overflow: hidden;
+  background: var(--color-modal-card);
+  border-radius: var(--border-radius-md);
 }
 
 @keyframes slide-up {

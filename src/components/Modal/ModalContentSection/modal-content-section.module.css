@@ -1,0 +1,14 @@
+.contentSection + .contentSection {
+  margin-top: 4.5rem;
+}
+
+.sectionDesc {
+  margin-top: 0.5rem;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
