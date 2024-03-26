@@ -34,23 +34,10 @@ const Modal = ({ handleToggleModal, modalData }: modalProps) => {
     { label: 'Location', value: location.name }
   ];
 
-  const rocketSpecs = [
-    { label: 'Length', value: 'placeholder-data' },
-    { label: 'Diameter', value: 'placeholder-data' },
-    { label: 'Fairing Diameter', value: 'placeholder-data' },
-    { label: 'Launch Mass', value: 'placeholder-data' },
-    { label: 'Thrust', value: 'placeholder-data' }
-  ];
-
   const rocketConfiguration = [
     { label: 'Family', value: rocket.family },
     { label: 'Name', value: rocket.name },
-    { label: 'Variant', value: rocket.variant }
-  ];
-
-  const rocketCapicty = [
-    { label: 'LEO', value: 'placeholder-data' },
-    { label: 'GEO', value: 'placeholder-data' }
+    { label: 'Variant', value: rocket.variant ? rocket.variant : 'N/A' }
   ];
 
   const agencyDetails = [
@@ -69,6 +56,25 @@ const Modal = ({ handleToggleModal, modalData }: modalProps) => {
     { label: 'Launch Vehicles', value: agency && agency.launchers },
     { label: 'Spacecraft', value: agency && agency.spacecraft }
   ];
+
+  const ModalCardList = ({ data }: { data: Array<Record<string, string | number>> }) => {
+    return (
+      <ul>
+        {' '}
+        {data.map((e, i) => (
+          <li key={i}>
+            <Typography
+              level={6}
+              color="secondary"
+            >
+              {e.label}
+            </Typography>
+            <p style={{ textWrap: 'balance' }}>{e.value}</p>
+          </li>
+        ))}{' '}
+      </ul>
+    );
+  };
 
   const MissionSection = (
     <ModalContentSection
@@ -91,23 +97,14 @@ const Modal = ({ handleToggleModal, modalData }: modalProps) => {
         isLarge
         heading="Launch Details"
       >
-        <ul>
-          {launchDetails.map((e, i) => (
-            <li key={i}>
-              <Typography
-                level={6}
-                color="secondary"
-              >
-                {e.label}
-              </Typography>
-              <p style={{ textWrap: 'balance' }}>{e.value}</p>
-            </li>
-          ))}
-        </ul>
+        <ModalCardList data={launchDetails} />
       </ModalCard>
-      <ModalCard heading="Mission Type">
+      <ModalCard
+        preHeading="Mission Type"
+        heading={missionDetails.type}
+      >
         {orbit.abbrev != 'N/A' ? (
-          <p>{missionDetails.type}</p>
+          <p>{missionDetails.name}</p>
         ) : (
           <p>Payload unknown or classified</p>
         )}
@@ -116,10 +113,7 @@ const Modal = ({ handleToggleModal, modalData }: modalProps) => {
   );
 
   const VehicleSection = (
-    <ModalContentSection
-      heading={`The ${rocket.name}`}
-      desc={'placeholder-data'}
-    >
+    <ModalContentSection heading={rocket.full_name}>
       {modalData?.image && (
         <div className={styles.modalImage}>
           <Image
@@ -132,52 +126,10 @@ const Modal = ({ handleToggleModal, modalData }: modalProps) => {
         </div>
       )}
       <ModalCard
-        isLarge
-        heading="Specifications"
+        heading="Configuration"
+        style={{ gridColumn: 'auto / span 6', aspectRatio: '4/1' }}
       >
-        <ul>
-          {rocketSpecs.map((e, i) => (
-            <li key={i}>
-              <Typography
-                level={6}
-                color="secondary"
-              >
-                {e.label}
-              </Typography>
-              <p style={{ textWrap: 'balance' }}>{e.value}</p>
-            </li>
-          ))}
-        </ul>
-      </ModalCard>
-      <ModalCard heading="Configuration">
-        <ul>
-          {rocketConfiguration.map((e, i) => (
-            <li key={i}>
-              <Typography
-                level={6}
-                color="secondary"
-              >
-                {e.label}
-              </Typography>
-              <p style={{ textWrap: 'balance' }}>{e.value}</p>
-            </li>
-          ))}
-        </ul>
-      </ModalCard>
-      <ModalCard heading="Capacity">
-        <ul>
-          {rocketCapicty.map((e, i) => (
-            <li key={i}>
-              <Typography
-                level={6}
-                color="secondary"
-              >
-                {e.label}
-              </Typography>
-              <p style={{ textWrap: 'balance' }}>{e.value}</p>
-            </li>
-          ))}
-        </ul>
+        <ModalCardList data={rocketConfiguration} />
       </ModalCard>
     </ModalContentSection>
   );
@@ -188,52 +140,16 @@ const Modal = ({ handleToggleModal, modalData }: modalProps) => {
       desc={agency && agency.description}
     >
       <ModalCard heading="Launch Details">
-        <ul>
-          {agencyDetails.map((e, i) => (
-            <li key={i}>
-              <Typography
-                level={6}
-                color="secondary"
-              >
-                {e.label}
-              </Typography>
-              <p style={{ textWrap: 'balance' }}>{e.value}</p>
-            </li>
-          ))}
-        </ul>
+        <ModalCardList data={agencyDetails} />
       </ModalCard>
       <ModalCard
         isLarge
         heading="Launch Record"
       >
-        <ul>
-          {agencyRecord.map((e, i) => (
-            <li key={i}>
-              <Typography
-                level={6}
-                color="secondary"
-              >
-                {e.label}
-              </Typography>
-              <p style={{ textWrap: 'balance' }}>{e.value}</p>
-            </li>
-          ))}
-        </ul>
+        <ModalCardList data={agencyRecord} />
       </ModalCard>
       <ModalCard heading="Vehicles">
-        <ul>
-          {agencyVehicles.map((e, i) => (
-            <li key={i}>
-              <Typography
-                level={6}
-                color="secondary"
-              >
-                {e.label}
-              </Typography>
-              <p style={{ textWrap: 'balance' }}>{e.value}</p>
-            </li>
-          ))}
-        </ul>
+        <ModalCardList data={agencyVehicles} />
       </ModalCard>
     </ModalContentSection>
   );

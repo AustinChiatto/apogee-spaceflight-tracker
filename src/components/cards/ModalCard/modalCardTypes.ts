@@ -5,4 +5,5 @@ export type modalCardProps = {
   preHeading?: string;
   heading: string;
   children?: ReactNode;
+  style?: React.CSSProperties;
 };

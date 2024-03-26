@@ -2,9 +2,12 @@ import Typography from '@/components/Typography/Typography';
 import styles from './modal-card.module.css';
 import { modalCardProps } from './modalCardTypes';
 
-const ModalCard = ({ isLarge, preHeading, heading, children }: modalCardProps) => {
+const ModalCard = ({ isLarge, preHeading, heading, children, style }: modalCardProps) => {
   return (
-    <li className={`${styles.modalCard} ${isLarge && styles.large}`}>
+    <li
+      className={`${styles.modalCard} ${isLarge && styles.large}`}
+      style={style}
+    >
       <div className={styles.cardHeadings}>
         {preHeading && (
           <Typography
@@ -28,8 +31,3 @@ const ModalCard = ({ isLarge, preHeading, heading, children }: modalCardProps) =
 };
 
 export default ModalCard;
-
-// isLarge
-// default
-// hasPreHeading
-// multiValue -- horizontal list for small card, vertical for large card
