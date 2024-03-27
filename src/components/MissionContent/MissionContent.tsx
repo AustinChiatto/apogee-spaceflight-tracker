@@ -45,7 +45,7 @@ const MissionContent = ({ missionData }: launchApiData) => {
 
           return (
             <MissionCard
-              key={i}
+              key={result.mission.id}
               handleToggleModal={() => handleToggleModal(result)}
               missionType={result.mission.type}
               missionName={result.mission.name}

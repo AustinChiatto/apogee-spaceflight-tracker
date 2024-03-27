@@ -11,6 +11,8 @@
   /* color - modal */
   --color-modal-glass: rgba(0, 0, 0, 0.5);
   --color-modal-card: var(--color-white);
+  /* color - special */
+  --color-mission-card-glare: rgba(255, 255, 255, 0.1);
 
   /* border-radius */
   --border-radius-sm: 0.5rem;
@@ -36,6 +38,8 @@
     /* color - modal */
     --color-modal-glass: rgba(255, 255, 255, 0.5);
     --color-modal-card: #131313;
+    /* color - special */
+    --color-mission-card-glare: rgba(255, 255, 255, 0.08);
   }
 }
 
