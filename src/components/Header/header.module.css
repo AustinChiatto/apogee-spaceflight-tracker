@@ -6,13 +6,13 @@
 }
 
 .header {
-  padding-block: 2rem 1.5rem;
-  height: 48dvh;
+  padding-block: 1rem 1.5rem;
+  height: 30dvh;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .header {
-    padding-block: 1rem 1.5rem;
-    height: 30dvh;
+    padding-block: 2rem 1.5rem;
+    height: 48dvh;
   }
 }
