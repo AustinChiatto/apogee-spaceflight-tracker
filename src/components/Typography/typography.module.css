@@ -33,30 +33,30 @@
 .h1,
 .h2,
 .h3 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-title);
   letter-spacing: 0.00063rem;
   line-height: 2rem;
 }
 
 .h4,
 .h5 {
-  font-size: 1rem;
+  font-size: var(--font-size-heading);
   letter-spacing: 0.00038rem;
 }
 
 .h6 {
-  font-size: 0.75rem;
+  font-size: var(--font-size-caption);
   font-weight: 400;
   letter-spacing: 0.00031rem;
 }
 
 .h1 {
-  font-size: 2rem;
+  font-size: var(--font-size-large-title);
 }
 
 .p {
-  font-size: 1rem;
+  font-size: var(--font-size-body);
   font-weight: 400;
   letter-spacing: 0.00038rem;
-  line-height: 1.4rem;
+  line-height: 1.5rem;
 }
