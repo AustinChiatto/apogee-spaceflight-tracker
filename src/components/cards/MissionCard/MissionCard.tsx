@@ -28,8 +28,8 @@ const MissionCard = ({
 
   const handleMouseMove = (e: any) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const xPos = ((e.clientX - rect.left) / rect.width - 0.5) * -7;
-    const yPos = ((e.clientY - rect.top) / rect.height - 0.5) * -7;
+    const xPos = ((e.clientX - rect.left) / rect.width - 0.5) * -6;
+    const yPos = ((e.clientY - rect.top) / rect.height - 0.5) * -6;
 
     mousePos.current = { x: xPos, y: yPos };
     e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
@@ -55,16 +55,16 @@ const MissionCard = ({
 
     const loop = () => {
       if (isAnimatingRef.current) {
-        positionRef.current.x = lerp(positionRef.current.x, mousePos.current.x, 0.1);
-        positionRef.current.y = lerp(positionRef.current.y, mousePos.current.y, 0.1);
+        positionRef.current.x = lerp(positionRef.current.x, mousePos.current.x, 0.05);
+        positionRef.current.y = lerp(positionRef.current.y, mousePos.current.y, 0.075);
 
         if (imageRef.current) {
           imageRef.current.style.transform = `translate(${positionRef.current.x}px, ${positionRef.current.y}px)`;
         }
 
         if (missionItemRef.current) {
-          const cardPosY = positionRef.current.y / 7;
-          const cardPosX = (positionRef.current.x / 7) * -1;
+          const cardPosY = positionRef.current.y / 6;
+          const cardPosX = (positionRef.current.x / 6) * -1;
           missionItemRef.current.style.transform = `rotateY(${cardPosX}deg) rotateX(${cardPosY}deg)`;
         }
       }
