@@ -1,7 +1,6 @@
 .modalWrapper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  padding-block: 4rem;
 
   position: fixed;
   top: 0;
@@ -17,14 +16,13 @@
 }
 
 .modalContainer {
-  grid-column: 3 / span 8;
+  grid-column: 1 / span 12;
   display: flex;
   height: fit-content;
   flex-direction: column;
   background: var(--color-body);
-  border-radius: var(--border-radius-lg);
-  padding: 4rem;
-  padding-top: 2rem;
+  padding: 1rem;
+  padding-top: 1rem;
   gap: 3rem;
   transform: translateY(100vh);
   animation: slide-up 400ms 200ms forwards cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -83,5 +81,37 @@
   100% {
     backdrop-filter: blur(20px);
     background: rgba(50, 50, 50, 0.48);
+  }
+}
+
+@media screen and (min-width: 728px) {
+  .modalWrapper {
+    padding-block: 4rem;
+  }
+
+  .modalContainer {
+    grid-column: 2 / span 10;
+    padding: 2rem;
+    padding-top: 2rem;
+    border-radius: var(--border-radius-lg);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .modalWrapper {
+    padding-block: 4rem;
+  }
+
+  .modalContainer {
+    grid-column: 3 / span 8;
+    padding: 4rem;
+    padding-top: 2rem;
+    border-radius: var(--border-radius-lg);
+  }
+}
+
+@media screen and (min-width: 1540px) {
+  .gridItem {
+    grid-column: auto / span 3;
   }
 }

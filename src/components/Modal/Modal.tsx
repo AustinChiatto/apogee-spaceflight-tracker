@@ -127,7 +127,7 @@ const Modal = ({ handleToggleModal, modalData }: modalProps) => {
       )}
       <ModalCard
         heading="Configuration"
-        style={{ gridColumn: 'auto / span 6', aspectRatio: '4/1' }}
+        style={{ gridColumn: 'auto / span 6' }}
       >
         <ModalCardList data={rocketConfiguration} />
       </ModalCard>

@@ -1,8 +1,8 @@
 .modalCard,
 .modalCard.large {
-  grid-column: auto / span 3;
+  grid-column: auto / span 6;
   grid-row: auto / span 1;
-  aspect-ratio: 2.5/1;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,11 +13,14 @@
 
 .modalCard.large {
   grid-row: auto / span 2;
-  aspect-ratio: unset;
 }
 
 .cardHeadings > * + * {
   margin-top: 0.125rem;
+}
+
+.cardContent {
+  margin-top: 5rem;
 }
 
 .cardContent > ul,
@@ -30,4 +33,21 @@
 
 .cardContent.large > ul {
   flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) {
+  .modalCard {
+    grid-column: auto / span 3;
+    grid-row: auto / span 1;
+    padding: 1.5rem;
+  }
+
+  .modalCard.large {
+    grid-column: auto / span 3;
+    grid-row: auto / span 2;
+  }
+
+  .cardContent {
+    margin-top: 5rem;
+  }
 }
