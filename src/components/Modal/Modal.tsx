@@ -159,6 +159,7 @@ const Modal = ({ handleToggleModal, modalData }: modalProps) => {
       <button
         className={styles.modalNavWrapper}
         onClick={handleOffModalClick}
+        role="button"
       >
         <div className={styles.modalNavInner}>
           <Image
