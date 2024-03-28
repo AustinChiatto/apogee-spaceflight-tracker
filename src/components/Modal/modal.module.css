@@ -47,18 +47,21 @@
   z-index: 5;
 }
 
+.modalNavWrapper:hover .modalNavInner > img {
+  transform: rotate(90deg);
+  transition: transform 200ms ease-in-out;
+}
+
 .modalNavInner {
   display: flex;
   gap: 1.25rem;
   padding: 1rem 1.5rem;
-  background: #538dff;
+  background: var(--color-blue);
   border-radius: inherit;
   height: calc(100% - 0.5rem);
   width: calc(100% - 0.5rem);
   margin: 0.25rem;
-}
-
-.modalNavWrapper:hover {
+  color: var(--color-white);
 }
 
 .modalContent {

@@ -3,11 +3,12 @@
   --color-white: #fbfbfb;
   --color-black: #000;
   --color-body: #eaeaea;
+  --color-blue: #538dff;
   /* color - text */
   --color-text-primary: #141414;
   --color-text-secondary: #646468;
   --color-text-tertiary: #8d8d92;
-  --color-anchor: #2d7bf7;
+  --color-anchor: var(--color-blue);
   /* color - modal */
   --color-modal-glass: rgba(0, 0, 0, 0.5);
   --color-modal-card: var(--color-white);
@@ -30,6 +31,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-body: #1b1b1b;
+    --color-blue: #407bed;
     /* color - text */
     --color-text-primary: #fbfbfb;
     --color-text-secondary: #8d8d92;

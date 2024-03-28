@@ -1,4 +1,4 @@
-import { ReactEventHandler, useRef } from 'react';
+import { ReactEventHandler, useEffect, useRef, useState } from 'react';
 import styles from './modal.module.css';
 import Chip from '../Chip/Chip';
 import Image from 'next/image';
@@ -14,11 +14,43 @@ type modalProps = {
 
 const Modal = ({ handleToggleModal, modalData }: modalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const [countdown, setCountdown] = useState('00 Days 00:00:00');
 
   const handleOffModalClick = (e: any) => {
     if (modalRef.current && modalRef.current.contains(e.target as Node)) return;
     handleToggleModal(e);
   };
+
+  // todo: separate logic
+  useEffect(() => {
+    const formatTime = (value: number) => value.toString().padStart(2, '0');
+
+    const getRemainingTime = () => {
+      const now = new Date().getTime();
+      const target = new Date(modalData?.net).getTime();
+      const difference = target - now;
+
+      if (difference < 0) {
+        return '00 Days 00:00:00';
+      } else {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        return `${formatTime(days)} Days ${formatTime(hours)}:${formatTime(minutes)}:${formatTime(
+          seconds
+        )}`;
+      }
+    };
+    setCountdown(getRemainingTime());
+
+    const intervalId = setInterval(() => {
+      setCountdown(getRemainingTime());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [modalData?.net]);
 
   const missionDetails = modalData?.mission;
   const orbit = modalData?.mission.orbit;
@@ -182,7 +214,7 @@ const Modal = ({ handleToggleModal, modalData }: modalProps) => {
         >
           <div className={styles.modalHeader}>
             <Chip
-              label="T- 0 Days 00:00:00"
+              label={`T- ${countdown}`}
               style={{ padding: '0.375rem 0.75rem', fontSize: '1.25rem' }}
             />
           </div>
