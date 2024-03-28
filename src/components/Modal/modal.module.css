@@ -22,7 +22,7 @@
   flex-direction: column;
   background: var(--color-body);
   padding: 1rem;
-  padding-top: 1rem;
+  padding-block: 1rem 8rem;
   gap: 3rem;
   transform: translateY(100vh);
   animation: slide-up 400ms 200ms forwards cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -34,16 +34,28 @@
   align-items: center;
 }
 
-.modalCloseButton {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  background: var(--color-black);
-  border-radius: 100%;
-  position: sticky;
-  top: 0;
-  transition: rotate 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+.modalNavWrapper {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  margin-right: -50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10rem;
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  z-index: 5;
+}
+
+.modalNavInner {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1rem 1.5rem;
+  background: #538dff;
+  border-radius: inherit;
+  height: calc(100% - 0.5rem);
+  width: calc(100% - 0.5rem);
+  margin: 0.25rem;
 }
 
 .modalCloseButton:hover {
@@ -86,11 +98,12 @@
 
 @media screen and (min-width: 768px) {
   .modalWrapper {
-    padding-block: 4rem;
+    padding-block: 4rem 7rem;
   }
 
   .modalContainer {
     grid-column: 2 / span 10;
+    padding-bottom: unset;
     padding: 2rem;
     padding-top: 2rem;
     border-radius: var(--border-radius-lg);
@@ -98,10 +111,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .modalWrapper {
-    padding-block: 4rem;
-  }
-
   .modalContainer {
     grid-column: 3 / span 8;
     padding: 4rem;

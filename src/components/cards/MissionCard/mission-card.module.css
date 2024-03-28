@@ -25,7 +25,7 @@
   z-index: 3;
   opacity: 0;
   background: radial-gradient(
-    600px at var(--mouse-x) var(--mouse-y),
+    31.25rem at var(--mouse-x) var(--mouse-y),
     var(--color-mission-card-glare) 40%,
     transparent
   );
