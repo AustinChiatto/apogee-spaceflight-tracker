@@ -47,7 +47,7 @@ const Modal = ({ handleToggleModal, modalData }: modalProps) => {
 
     const intervalId = setInterval(() => {
       setCountdown(getRemainingTime());
-    }, 1000);
+    }, 200);
 
     return () => clearInterval(intervalId);
   }, [modalData?.net]);
