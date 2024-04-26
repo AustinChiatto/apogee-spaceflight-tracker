@@ -74,26 +74,26 @@ p,
 h1,
 h2,
 h3 {
-  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  font-size: var(--font-size-title);
   letter-spacing: 0.00063rem;
   line-height: 2rem;
 }
 
 h4,
 h5 {
-  font-size: 1rem;
+  font-size: var(--font-size-body);
   letter-spacing: 0.00038rem;
 }
 
 h6 {
-  font-size: clamp(0.625rem, 3vw, 0.75rem);
+  font-size: var(--font-size-caption);
   font-weight: 400;
   letter-spacing: 0.00031rem;
 }
 
 p,
 .p {
-  font-size: 1rem;
+  font-size: var(--font-size-body);
   font-weight: 400;
   letter-spacing: 0.00038rem;
   line-height: 1.5rem;

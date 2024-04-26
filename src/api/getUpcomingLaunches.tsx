@@ -5,7 +5,7 @@ const getUpcomingLaunches = async () => {
 
   if (!response.ok) throw new Error('Failed to fetch launch data');
 
-  const data = await response.json();
+  const data = response.json();
   return data;
 };
 
