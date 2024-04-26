@@ -9,7 +9,7 @@ const Home = async () => {
   return (
     <main className={styles.main}>
       <Header />
-      {(await missionData) && <MissionContent missionData={missionData} />}
+      {missionData && <MissionContent missionData={missionData} />}
     </main>
   );
 };
